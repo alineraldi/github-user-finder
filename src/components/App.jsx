@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../App.css'
+import searchIcon from '../img/search.png';
 
 function App() {
   // Declaring states
@@ -35,13 +37,14 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-gray-800 text-center mb-4">Github User Search</h1>
+    <div className="">
+      <div className="input-box mt-3">
+      <p className="text-gray-800 text-xs uppercase opacity-50">alineraldi @ github</p>
+        <h1 className="text-2xl font-bold text-white text-center mb-4">Github User Search</h1>
         <div className="flex mb-4">
           <input
             type="text"
-            className="flex-1 border border-gray-300 rounded-l-lg p-2 focus:outline-none"
+            className="flex-1 border bg-transparent text-blue border-grey rounded-l-lg p-2 focus:outline-none border-yellow"
             placeholder="Type the username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -49,13 +52,13 @@ function App() {
           />
           <button
             onClick={handleSearch}
-            className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600"
+            className="bg-darkblue text-white px-4 py-2 rounded-r-lg focus:bg-blue"
           >
-            Search
+            <img className='w-3 object-contain' src={searchIcon} alt="search-icon" />
           </button>
         </div>
 
-        {error && <p className="text-red-500 text-center">{error}</p>}
+        {error && <p className="text-yellow text-center">{error}</p>}
 
         {userData && (
           <div className="text-center">
@@ -64,8 +67,9 @@ function App() {
               alt={userData.name}
               className="w-24 h-24 rounded-full mx-auto mb-4"
             />
+            <h2 className="text-x lowercase">{userData.login}</h2>
             <h2 className="text-xl font-bold">{userData.name || "Unnamed user"}</h2>
-            <p className="text-gray-600">Repositories: {userData.public_repos}</p>
+            <p className="text-yellow">Repositories: {userData.public_repos}</p>
             <a
               href={userData.html_url}
               target="_blank"
@@ -75,7 +79,7 @@ function App() {
               // - 'noreferrer' prevents the browser from sending the referring page's URL to the new page, which enhances privacy by not revealing where the user came from.
               // This is a best practice when opening links in a new tab (target="_blank") to protect against potential vulnerabilities.
 
-              className="text-blue-500 hover:underline"
+              className="text-white hover:text-darkblue"
             >
               Go to {userData.name}'s GitHub profile
             </a>
