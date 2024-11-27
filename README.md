@@ -38,10 +38,12 @@ Certifique-se de ter instalado em sua máquina:
 
 
 2. **Instale as dependências**  
-   ```npm install
+   ```
+   npm install
 
 3. **Execute o projeto**  
-   ```npm start
+   ```
+   npm start
 
 ## 📌 Aprendizados
 
