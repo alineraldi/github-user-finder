@@ -47,12 +47,11 @@ Certifique-se de ter instalado em sua máquina:
 
 ## 📌 Aprendizados
 
-- Este projeto não foi apenas uma prática de habilidades técnicas. Ele também proporcionou: 
--- Experiência em desenvolvimento ágil (concluído em um dia); 
+Este projeto não foi apenas uma prática de habilidades técnicas. Ele também proporcionou: 
 
--- Melhor entendimento de consumo de APIs com Axios; 
-
--- Experimentação criativa com animações CSS.
+- Experiência em desenvolvimento ágil (concluído em um dia); 
+- Melhor entendimento de consumo de APIs com Axios; 
+- Experimentação criativa com animações CSS.
 
 ## 🤝 Agradecimentos
 
