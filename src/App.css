@@ -1,91 +1,77 @@
+/* Configuração global para bordas e espaçamentos, aplicando o box-sizing: border-box para todo o documento */
 *, html, body {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+    box-sizing: border-box;
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove o preenchimento padrão */
 }
 
+/* Estilo para o corpo da página */
 body { 
-    position: relative;
-	background: radial-gradient(circle at -16% -16%, #F36B1C, #084387); /* Light Orange and Blue */
-	display: grid;
-	height: 100vh;
-	place-items: center;
-    z-index: -999; 
+    position: relative; /* Define o corpo como um contêiner posicionado para elementos posicionados relativamente */
+    background: radial-gradient(circle at -16% -16%, #F36B1C, #084387); /* Gradiente radial com laranja claro e azul */
+    display: grid; /* Usa grid layout para centralizar conteúdo */
+    height: 100vh; /* Altura total da janela de visualização */
+    place-items: center; /* Centraliza elementos horizontal e verticalmente */
+    z-index: -999; /* Define uma ordem de sobreposição extremamente baixa para o corpo */
 }
 
+/* Adiciona um efeito visual dinâmico ao fundo usando ::before */
 body::before {
-    will-change: transform, border-radius;
-    position: absolute;
-    z-index: -1;
-	animation: anim 30s infinite ease-in-out;
-	background: radial-gradient(circle at 0% 0%, #F36B1C, #084387); /* Light Orange and Blue */
-	border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
-	box-shadow: 0 -2vmin 4vmin #F8D605 inset, 0 1vmin 4vmin #F36B1C inset,
-		0 -2vmin 7vmin #042C71 inset; /* Yellow, Light Orange, Dark Blue */
-	content: "";
-	filter: drop-shadow(0 0 3vmin #0B6AB0) drop-shadow(0 5vmin 4vmin #F8D605)
-		drop-shadow(2vmin -2vmin 15vmin #084387)
-		drop-shadow(0 0 7vmin #042C71); /* Light Blue, Yellow, Blue, Dark Blue */
-	position: absolute;
-	height: 100vmin;
-	width: 100vmin; 
+    will-change: transform, border-radius; /* Indica que transformações e bordas mudam frequentemente para performance */
+    position: absolute; /* Elemento posicionado relativamente ao corpo */
+    z-index: -1; /* Fica atrás do conteúdo principal */
+    animation: anim 15s infinite ease-in-out; /* Animação contínua que altera bordas e sombras */
+    background: radial-gradient(circle at 0% 0%, #F36B1C, #084387); /* Gradiente semelhante ao corpo */
+    border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%; /* Forma inicial com bordas arredondadas variadas */
+    box-shadow: 0 -2vmin 4vmin #F8D605 inset, 0 1vmin 4vmin #F36B1C inset,
+        0 -2vmin 7vmin #042C71 inset; /* Adiciona sombras internas com várias cores */
+    content: ""; /* Gera o elemento ::before */
+    filter: drop-shadow(0 0 3vmin #0B6AB0) drop-shadow(0 5vmin 4vmin #F8D605)
+        drop-shadow(2vmin -2vmin 15vmin #084387)
+        drop-shadow(0 0 7vmin #042C71); /* Efeitos de sombra projetada com várias cores */
+    height: 100vmin; /* Define a altura do elemento ::before */
+    width: 100vmin; /* Define a largura do elemento ::before */
 }
 
+/* Define a animação para as formas e sombras no elemento ::before */
 @keyframes anim {
-	0%, 100% {
-		border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
-		box-shadow: 0 -2vmin 4vmin #F8D605 inset, 0 -4vmin 4vmin #F36B1C inset,
-			0 -2vmin 7vmin #042C71 inset; /* Yellow, Light Orange, Dark Blue */
-	}
-
-	10% {
-		border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
-	}
-
-	20% {
-		border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
-	}
-
-	30% {
-		border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
-		box-shadow: 0 -4vmin 8vmin #F36B1C inset, -1vmin -2vmin 6vmin #F8D605 inset,
-			-1vmin -2vmin 4vmin #042C71 inset, 1vmin 4vmin 8vmin #0B6AB0 inset; /* Light Orange, Yellow, Dark Blue, Light Blue */
-	}
-
-	40% {
-		border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
-	}
-
-	50% {
-		border-radius: 100%;
-		box-shadow: 0 4vmin 16vmin #F36B1C inset, 0 2vmin 5vmin #F8D605 inset, 0 4vmin 4vmin #042C71 inset,
-			0 6vmin 8vmin #0B6AB0 inset; /* Light Orange, Yellow, Dark Blue, Light Blue */
-	}
-
-	60% {
-		border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
-	}
-
-	70% {
-		border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
-		box-shadow: 1vmin 1vmin 8vmin #F8D605 inset,
-			2vmin -1vmin 4vmin #F36B1C inset, -1vmin -1vmin 16vmin #042C71 inset; /* Yellow, Light Orange, Dark Blue */
-	}
-
-	80% {
-		border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
-	}
-
-	90% {
-		border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
-	}
+    /* Estados da animação com variação nas bordas arredondadas e sombras */
+    0%, 100% {
+        border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%; /* Forma arredondada inicial e final */
+        box-shadow: 0 -2vmin 4vmin #F8D605 inset, 0 -4vmin 4vmin #F36B1C inset,
+            0 -2vmin 7vmin #042C71 inset; /* Sombras iniciais e finais */
+    }
+    10% {
+        border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; /* Mudança para uma forma mais irregular */
+    }
+    20% {
+        border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%; /* Outra forma intermediária */
+    }
+    30% {
+        border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%; /* Formato alterado e sombras ajustadas */
+        box-shadow: 0 -4vmin 8vmin #F36B1C inset, -1vmin -2vmin 6vmin #F8D605 inset,
+            -1vmin -2vmin 4vmin #042C71 inset, 1vmin 4vmin 8vmin #0B6AB0 inset; 
+    }
+    /* Outros estados intermediários continuam variando bordas e sombras */
+    50% {
+        border-radius: 100%; /* Forma totalmente circular */
+        box-shadow: 0 4vmin 16vmin #F36B1C inset, 0 2vmin 5vmin #F8D605 inset, 0 4vmin 4vmin #042C71 inset,
+            0 6vmin 8vmin #0B6AB0 inset; 
+    }
+    70% {
+        border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%; 
+    }
+    90% {
+        border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%; /* Forma mais extrema */
+    }
 }
 
+/* Caixa de entrada de texto fixada */
 #input-box {
-    position: fixed;      
-    top: 70%;             /* Ajustado para um pouco abaixo do centro */
-    left: 50%;           
-    transform: translate(-50%, -50%); /* Ajuste de tradução */
-    z-index: 2;
-    display: block;        
+    position: fixed; /* Caixa permanece fixa ao viewport */
+    top: 70%; /* Posicionada um pouco abaixo do centro */
+    left: 50%; /* Centralizada horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centralização exata */
+    z-index: 2; /* Aparece acima do fundo */
+    display: block; /* Exibe como elemento de bloco */
 }

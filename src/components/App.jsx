@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="">
       <div className="input-box mt-3">
-      <p className="text-gray-800 text-xs uppercase opacity-50">alineraldi @ github</p>
+      <p className="text-gray-800 text-xs uppercase opacity-50 hover:text-white"><a href="https://github.com/alineraldi" target="_blank" rel="noopener noreferrer">alineraldi @ github</a></p>
         <h1 className="text-2xl font-bold text-white text-center mb-4">Github User Search</h1>
         <div className="flex mb-4">
           <input
