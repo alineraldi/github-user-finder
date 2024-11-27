@@ -47,14 +47,12 @@ Certifique-se de ter instalado em sua máquina:
 
 ## 📌 Aprendizados
 
-- Este projeto não foi apenas uma prática de habilidades técnicas. Ele também proporcionou:
--- Experiência em desenvolvimento ágil (concluído em um dia).
--- Melhor entendimento de consumo de APIs com Axios.
--- Experimentação criativa com animações CSS.
+- Este projeto não foi apenas uma prática de habilidades técnicas. Ele também proporcionou: Experiência em desenvolvimento ágil (concluído em um dia);Melhor entendimento de consumo de APIs com Axios; Experimentação criativa com animações CSS.
 
 ## 🤝 Agradecimentos
 
 Professor Jaques Antunes pelas aulas e orientações.
+
 +praTI e Codifica Edu pela oportunidade de aprendizado e crescimento.
 
 ## 📬 Contato
